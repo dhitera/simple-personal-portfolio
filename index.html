@@ -1,0 +1,471 @@
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./dist/output.css" rel="stylesheet" />
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+    <script>
+      // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+    <title>Portfolio</title>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <!-- Navbar Section -->
+    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+      <div
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
+      >
+        <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+          <span
+            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+            >Andrian</span
+          >
+        </a>
+        <div class="flex items-center md:order-2">
+          <button
+            id="theme-toggle"
+            type="button"
+            class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5 mr-2"
+          >
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.293 13.293A8 8 0 716.707 2.707a8.001 8.001 0 1010.586 10.586z"
+              ></path>
+            </svg>
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden w-5 h-5"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Open main menu</span>
+            <svg
+              class="w-5 h-5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 17 14"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M1 1h15M1 7h15M1 13h15"
+              />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+          <ul
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+          >
+            <li>
+              <a
+                href="#hero"
+                class="block py-2 px-3 text-white bg-blue-700 rounded-sm md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
+                aria-current="page"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#about"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >About</a
+              >
+            </li>
+            <li>
+              <a
+                href="#experience"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Experience</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                >Contact</a
+              >
+            </li>
+            <li>
+              <button
+                id="theme-toggle"
+                type="button"
+                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+              >
+                <svg
+                  id="theme-toggle-dark-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
+                  ></path>
+                </svg>
+                <svg
+                  id="theme-toggle-light-icon"
+                  class="hidden w-5 h-5"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                  ></path>
+                </svg>
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+      id="hero"
+      class="bg-white dark:bg-gray-900 py-32 px-4 md:px-15 h-screen"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-center items-center text-gray-900 dark:text-white max-w-screen-xl mx-auto"
+      >
+        <!-- Image first on mobile -->
+        <div
+          class="w-full md:w-1/2 flex items-center justify-center mb-6 md:mb-0 md:order-2 relative"
+        >
+          <div
+            class="absolute inset-0 bg-gradient-to-br from-blue-900 to-pink-600 blur-xs opacity-80 rounded-4xl"
+          ></div>
+          <img
+            src="img/profile.png"
+            alt="Profile image"
+            class="relative z-10 w-96 md:w-[28rem] lg:w-[32rem] xl:w-[36rem] h-auto max-w-none"
+          />
+        </div>
+        <!-- Text second on mobile -->
+        <div
+          class="flex flex-col justify-center w-full md:w-1/2 text-center md:text-left md:order-1"
+        >
+          <p
+            class="text-lg md:text-xl lg:text-2xl italic font-semibold text-gray-500 opacity-80 font-mono mt-2"
+          >
+            Hello, my name is
+          </p>
+          <p class="text-4xl md:text-6xl lg:text-7xl font-mono font-bold">
+            Mochammad Taufiq Andrian
+          </p>
+          <p
+            class="text-lg md:text-xl lg:text-2xl italic font-semibold text-white opacity-80 font-mono mt-2 me-2 text-center md:text-right"
+          >
+            Creative Communication
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section
+      id="about"
+      class="bg-white dark:bg-gray-600 py-10 px-4 md:px-15 h-screen flex items-center"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-center items-center md:gap-20 text-white max-w-screen-xl mx-auto w-full"
+      >
+        <img
+          src="img/ea.jpg"
+          alt=""
+          class="w-64 md:w-1/4 mb-6 md:mb-0 rounded-lg"
+        />
+        <div class="flex flex-col w-full md:w-1/2">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-center md:text-left"
+          >
+            About Me
+          </h2>
+          <p
+            class="mt-2 text-base md:text-lg lg:text-xl text-center md:text-justify"
+          >
+            Mahasiswa BINUS University yang memiliki keunggulan didalam bidang
+            Leadership yang kuat dan terbukti efektif dalam mengarahkan tim
+            menuju pencapaian tujuan bersama. Terampil dalam mengidentifikasi
+            dan memecahkan masalah didalam suatu organisasi dan memiliki
+            kemampuan komunikasi yang jelas dan persuasif.
+          </p>
+
+          <!-- Badge Section -->
+          <div
+            class="flex flex-wrap gap-3 mt-6 justify-center md:justify-start"
+          >
+            <span
+              class="bg-blue-100 text-blue-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-blue-900 dark:text-blue-300"
+            >
+              Leadership
+            </span>
+            <span
+              class="bg-green-100 text-green-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-green-900 dark:text-green-300"
+            >
+              Teamwork
+            </span>
+            <span
+              class="bg-purple-100 text-purple-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-purple-900 dark:text-purple-300"
+            >
+              Communication
+            </span>
+            <span
+              class="bg-yellow-100 text-yellow-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-yellow-900 dark:text-yellow-300"
+            >
+              Organization
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section
+      id="experience"
+      class="bg-white dark:bg-gray-900 py-10 px-4 md:px-15 min-h-screen"
+    >
+      <div
+        class="flex flex-col md:flex-row max-w-screen-xl mx-auto md:items-center"
+      >
+        <div class="mb-8 md:mb-0 md:mr-8">
+          <h2
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center md:text-left"
+          >
+            My Experience
+          </h2>
+        </div>
+        <ol
+          class="relative border-s border-gray-200 dark:border-gray-700 flex-1"
+        >
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <time
+              class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+              >2021 - 2022</time
+            >
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Wakil Kesiswaan Putra
+            </h3>
+            <ul
+              class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+            >
+              <li>
+                Membantu memimpin dan mendampingi 30 siswa didalam kesehariannya
+              </li>
+              <li>
+                Membantu membina 30 siswa didalam mengikuti lomba lomba antar
+                siswa
+              </li>
+            </ul>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <time
+              class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+              >2021 - 2023</time
+            >
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Ketua Ekstrakurikuler Futsal
+            </h3>
+            <ul
+              class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+            >
+              <li>Membuat program latihan tim Futsal</li>
+              <li>Membawa Tim untuk mengikuti perlombaan</li>
+            </ul>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <time
+              class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+              >2021 - 2023</time
+            >
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Ketua Divisi Pemuda dan Olahraga OSIS
+            </h3>
+            <ul
+              class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+            >
+              <li>
+                Berhasil membuat Event- Event dan Class Meeting selama masa
+                jabatan
+              </li>
+              <li>Membuat Program kegiatan olahraga bersama Alumni</li>
+            </ul>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <time
+              class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+              >2022 - 2023</time
+            >
+            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+              Ketua Pelaksana Buku Tahunan Sekolah
+            </h3>
+            <ul
+              class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+            >
+              <li>
+                Menciptakan lingkungan kerja yang mendukung pertumbuhan individu
+                dan kolaborasi tim.
+              </li>
+              <li>Berhasil mengumpulkan dana sponsor</li>
+            </ul>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="bg-white rounded-lg shadow-sm m-4 dark:bg-gray-800">
+      <div
+        class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
+      >
+        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+          >© 2023
+          <a href="https://flowbite.com/" class="hover:underline">Flowbite™</a>.
+          All Rights Reserved.
+        </span>
+        <button
+          type="button"
+          class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-sm p-2.5 text-center inline-flex items-center me-2 dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+        >
+          <svg
+            class="w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M12 6v13m0-13 4 4m-4-4-4 4"
+            />
+          </svg>
+
+          <span class="sr-only">Arrow Up</span>
+        </button>
+        <ul
+          class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0"
+        >
+          <li>
+            <a href="#" class="hover:underline me-4 md:me-6">About</a>
+          </li>
+          <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#" class="hover:underline me-4 md:me-6">Licensing</a>
+          </li>
+          <li>
+            <a href="#" class="hover:underline">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+
+    <script src="./dist/flowbite.min.js"></script>
+    <script>
+      var themeToggleDarkIcon = document.getElementById(
+        "theme-toggle-dark-icon"
+      );
+      var themeToggleLightIcon = document.getElementById(
+        "theme-toggle-light-icon"
+      );
+
+      // Change the icons inside the button based on previous settings
+      if (
+        localStorage.getItem("color-theme") === "dark" ||
+        (!("color-theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        themeToggleLightIcon.classList.remove("hidden");
+      } else {
+        themeToggleDarkIcon.classList.remove("hidden");
+      }
+
+      var themeToggleBtn = document.getElementById("theme-toggle");
+
+      themeToggleBtn.addEventListener("click", function () {
+        // toggle icons inside button
+        themeToggleDarkIcon.classList.toggle("hidden");
+        themeToggleLightIcon.classList.toggle("hidden");
+
+        // if set via local storage previously
+        if (localStorage.getItem("color-theme")) {
+          if (localStorage.getItem("color-theme") === "light") {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          }
+
+          // if NOT set via local storage previously
+        } else {
+          if (document.documentElement.classList.contains("dark")) {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("color-theme", "light");
+          } else {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("color-theme", "dark");
+          }
+        }
+      });
+    </script>
+  </body>
+</html>
