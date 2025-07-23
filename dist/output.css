@@ -1866,6 +1866,14 @@
     border-style: var(--tw-border-style);
     border-width: 0px;
   }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-4 {
+    border-style: var(--tw-border-style);
+    border-width: 4px;
+  }
   .border-s {
     border-inline-start-style: var(--tw-border-style);
     border-inline-start-width: 1px;
@@ -1877,6 +1885,14 @@
   .border-b {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
+  }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+  .border-b-4 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 4px;
   }
   .dark {
     & .apexcharts-canvas .apexcharts-tooltip {
@@ -2025,6 +2041,9 @@
   }
   .border-gray-300 {
     border-color: var(--color-gray-300);
+  }
+  .border-gray-800 {
+    border-color: var(--color-gray-800);
   }
   .border-white {
     border-color: var(--color-white);
@@ -2334,6 +2353,10 @@
   .text-xl {
     font-size: var(--text-xl);
     line-height: var(--tw-leading, var(--text-xl--line-height));
+  }
+  .text-xs {
+    font-size: var(--text-xs);
+    line-height: var(--tw-leading, var(--text-xs--line-height));
   }
   .apexcharts-datalabels {
     .apexcharts-canvas & .apexcharts-text.apexcharts-pie-label {
@@ -2985,6 +3008,11 @@
       border-color: var(--color-gray-700);
     }
   }
+  .dark\:border-gray-800 {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-gray-800);
+    }
+  }
   .dark\:border-gray-900 {
     &:where(.dark, .dark *) {
       border-color: var(--color-gray-900);
@@ -2993,6 +3021,11 @@
   .dark\:border-transparent {
     &:where(.dark, .dark *) {
       border-color: transparent;
+    }
+  }
+  .dark\:border-white {
+    &:where(.dark, .dark *) {
+      border-color: var(--color-white);
     }
   }
   .dark\:bg-blue-600 {
