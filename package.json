@@ -7,7 +7,7 @@
     "build-css": "tailwindcss -i src/input.css -o dist/output.css && powershell Copy-Item .\\node_modules\\flowbite\\dist\\flowbite.min.js -Destination .\\dist\\flowbite.min.js",
     "watch-css": "tailwindcss -i src/input.css -o dist/output.css --watch",
     "build": "npm run build-css",
-    "dev": "npm run watch-css"
+    "dev": "tailwindcss -i src/input.css -o dist/output.css --watch"
   },
   "keywords": [],
   "author": "",

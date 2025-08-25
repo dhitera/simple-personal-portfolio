@@ -2,8 +2,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="./dist/output.css" rel="stylesheet" />
+    <link href="output.css" rel="stylesheet" />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
     <style>
       html {
         scroll-behavior: smooth;
@@ -21,18 +25,18 @@
         document.documentElement.classList.remove("dark");
       }
     </script>
-    <title>Portfolio</title>
+    <title>Naifah Alma's Portfolio</title>
   </head>
   <body class="bg-slate-50 dark:bg-gray-900">
     <!-- Navbar Section -->
-    <nav class="bg-white border-gray-200 dark:bg-gray-900">
+    <nav class="bg-slate-50 border-gray-200 dark:bg-gray-900">
       <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4"
       >
         <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <span
-            class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
-            >Andrian</span
+            class="self-center text-3xl font-semibold whitespace-nowrap text-orange-500 font-serif dark:text-blue-700"
+            >Alma</span
           >
         </a>
         <div class="flex items-center md:order-2">
@@ -49,9 +53,12 @@
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
-                d="M17.293 13.293A8 8 0 716.707 2.707a8.001 8.001 0 1010.586 10.586z"
-              ></path>
+                fill-rule="evenodd"
+                d="M11.675 2.015a.998.998 0 0 0-.403.011C6.09 2.4 2 6.722 2 12c0 5.523 4.477 10 10 10 4.356 0 8.058-2.784 9.43-6.667a1 1 0 0 0-1.02-1.33c-.08.006-.105.005-.127.005h-.001l-.028-.002A5.227 5.227 0 0 0 20 14a8 8 0 0 1-8-8c0-.952.121-1.752.404-2.558a.996.996 0 0 0 .096-.428V3a1 1 0 0 0-.825-.985Z"
+                clip-rule="evenodd"
+              />
             </svg>
+
             <svg
               id="theme-toggle-light-icon"
               class="hidden w-5 h-5"
@@ -93,12 +100,12 @@
         </div>
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul
-            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 text-xl"
+            class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-slate-50 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 text-xl"
           >
             <li>
               <a
                 href="#hero"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
                 >Home</a
               >
@@ -106,21 +113,21 @@
             <li>
               <a
                 href="#about"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >About</a
               >
             </li>
             <li>
               <a
                 href="#experience"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Experience</a
               >
             </li>
             <li>
               <a
                 href="#contact"
-                class="block py-2 px-3 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                class="block py-2 px-3 text-gray-400 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-orange-600 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 >Contact</a
               >
             </li>
@@ -128,7 +135,7 @@
               <button
                 id="theme-toggle"
                 type="button"
-                class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
+                class="text-gray-400 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5"
               >
                 <svg
                   id="theme-toggle-dark-icon"
@@ -164,7 +171,7 @@
     <!-- Hero Section -->
     <section
       id="hero"
-      class="bg-white dark:bg-gray-900 py-20 px-4 md:px-15 h-screen"
+      class="bg-slate-50 dark:bg-gray-900 py-20 px-4 md:px-15 h-screen"
     >
       <div
         class="flex flex-col md:flex-row justify-center items-center text-gray-900 dark:text-white max-w-screen-xl mx-auto"
@@ -175,12 +182,12 @@
           data-aos="fade-left"
         >
           <div
-            class="absolute inset-0 bg-gradient-to-br from-blue-900 to-pink-600 blur-3xl opacity-80 rounded-4xl"
+            class="absolute inset-0 bg-gradient-to-br from-orange-300 to-orange-700 dark:from-blue-900 dark:to-pink-600 dark:bg-gradient-to-br blur-3xl opacity-80 rounded-4xl"
           ></div>
           <img
-            src="img/profileWithBg.jpeg"
+            src="img/profilePict.jpeg"
             alt="Profile image"
-            class="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover max-w-none rounded-full shadow-lg border-4 border-gray-800 dark:border-white"
+            class="relative z-10 w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover max-w-none rounded-full shadow-lg object-top"
           />
         </div>
         <!-- Text second on mobile -->
@@ -193,14 +200,35 @@
           >
             Hello, my name is
           </p>
-          <p class="text-4xl md:text-6xl lg:text-7xl font-mono font-bold">
-            Mochammad Taufiq Andrian
+          <p class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold">
+            Naifah
+            <span class="text-orange-500 dark:text-blue-700">Alma</span> Malinda
           </p>
           <p
-            class="text-lg md:text-xl lg:text-2xl italic font-semibold text-white opacity-80 font-mono mt-2 me-2 text-center md:text-right"
+            class="text-lg md:text-xl lg:text-2xl font-semibold text-gray-500 opacity-80 font-mono mt-2 me-2 text-center md:text-right"
           >
-            Creative Communication
+            Bussiness Law Student at BINUS University
           </p>
+          <div
+            class="flex flex-row justify-center gap-1 md:justify-center mt-6"
+          >
+            <a
+              href="#about"
+              class="text-white bg-gradient-to-r from-orange-300 to-amber-600 dark:bg-gradient-to-r dark:from-cyan-500 dark:to-blue-500 focus:ring-4 focus:outline-none focus:ring-amber-400 dark:focus:ring-blue-800 font-medium rounded-lg text-base px-5 py-2.5 text-center me-2 mb-2"
+            >
+              Learn More About Me
+            </a>
+            <a
+              href="#contact"
+              class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-base font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-orange-300 to-amber-600 dark:bg-gradient-to-r dark:from-cyan-500 dark:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-amber-400 dark:focus:ring-blue-800"
+            >
+              <span
+                class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-transparent group-hover:dark:bg-transparent"
+              >
+                Get In Touch
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -208,69 +236,70 @@
     <!-- About Section -->
     <section
       id="about"
-      class="bg-white dark:bg-gray-800 py-10 px-4 md:px-15 h-screen flex items-center"
+      class="bg-slate-50 dark:bg-gray-900 py-10 px-4 md:px-15 h-screen flex items-center font-serif"
     >
       <div
-        class="flex flex-col md:flex-row justify-center items-center md:gap-20 text-white max-w-screen-xl mx-auto w-full"
+        class="flex flex-col justify-center items-center text-center max-w-screen-xl mx-auto w-full"
       >
-        <img
-          src="img/ea.jpg"
-          alt=""
-          class="w-64 md:w-1/4 mb-6 md:mb-0 rounded-lg"
-          data-aos="fade-right"
-        />
-        <div class="flex flex-col w-full md:w-1/2" data-aos="fade-left">
+        <div
+          class="flex flex-col w-full text-gray-900 dark:text-white"
+          data-aos="fade-up"
+        >
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-center md:text-left"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-center underline decoration-amber-600 dark:decoration-indigo-500 underline-offset-8"
           >
             About Me
           </h2>
           <p
-            class="mt-2 text-base md:text-lg lg:text-xl text-center md:text-justify"
+            class="mt-2 text-base md:text-lg lg:text-xl text-center font-sans max-w-4xl mx-auto"
           >
-            Mahasiswa BINUS University yang memiliki keunggulan didalam bidang
-            Leadership yang kuat dan terbukti efektif dalam mengarahkan tim
-            menuju pencapaian tujuan bersama. Terampil dalam mengidentifikasi
-            dan memecahkan masalah didalam suatu organisasi dan memiliki
-            kemampuan komunikasi yang jelas dan persuasif.
+            A highly enthusiastic and motivated Business Law student at BINUS
+            University, equipped with organizational, leadership, and initiative
+            skills. Additionally, I have actively gained experience in several
+            organizations during my school years.
           </p>
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-center md:text-left mt-3"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-center mt-20 underline decoration-amber-600 dark:decoration-indigo-500 underline-offset-8"
           >
             Skills
           </h2>
 
           <!-- Badge Section -->
-          <div
-            class="flex flex-wrap gap-3 mt-6 justify-center md:justify-start"
-          >
+          <div class="flex flex-wrap gap-3 mt-6 justify-center">
             <span
-              class="bg-gray-100 text-gray-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-gray-900 dark:text-white"
+              class="text-white text-sm md:text-lg font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-600 dark:from-blue-600 dark:to-purple-700"
               data-aos="fade-up"
               data-aos-duration="700"
             >
               Leadership
             </span>
             <span
-              class="bg-slate-100 text-slate-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-gray-900 dark:text-white"
+              class="text-white text-sm md:text-lg font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-600 dark:from-blue-600 dark:to-purple-700"
               data-aos="fade-up"
               data-aos-duration="1000"
             >
               Teamwork
             </span>
             <span
-              class="bg-zinc-100 text-zinc-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-gray-900 dark:text-white"
+              class="text-white text-sm md:text-lg font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-600 dark:from-blue-600 dark:to-purple-700"
               data-aos="fade-up"
               data-aos-duration="1300"
             >
               Communication
             </span>
             <span
-              class="bg-neutral-100 text-neutral-800 text-sm md:text-lg font-medium px-3 py-1.5 rounded-full dark:bg-gray-900 dark:text-white"
+              class="text-white text-sm md:text-lg font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-600 dark:from-blue-600 dark:to-purple-700"
               data-aos="fade-up"
               data-aos-duration="1600"
             >
               Organization
+            </span>
+            <span
+              class="text-white text-sm md:text-lg font-medium px-3 py-1.5 rounded-full bg-gradient-to-r from-orange-300 to-orange-600 dark:from-blue-600 dark:to-purple-700"
+              data-aos="fade-up"
+              data-aos-duration="1600"
+            >
+              Critical Thinking
             </span>
           </div>
         </div>
@@ -280,14 +309,14 @@
     <!-- Experience Section -->
     <section
       id="experience"
-      class="bg-white dark:bg-gray-900 py-10 px-4 md:px-15 min-h-screen"
+      class="bg-slate-50 dark:bg-gray-900 py-10 px-4 md:px-15 min-h-screen"
     >
       <div
         class="flex flex-col md:flex-row max-w-screen-xl mx-auto md:items-center"
       >
         <div class="mb-8 md:mb-0 md:mr-8" data-aos="fade-in">
           <h2
-            class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center md:text-left"
+            class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white text-center md:text-left underline decoration-amber-600 dark:decoration-indigo-500 underline-offset-8"
           >
             My Experience
           </h2>
@@ -302,21 +331,48 @@
             <div data-aos="fade-down" data-aos-duration="700">
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >2021 - 2022</time
+                >Oct 2018 - Nov 2019</time
               >
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Wakil Kesiswaan Putra
+                Student Council President
               </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                Pupuk Kujang Cikampek Junior High School
+              </p>
               <ul
                 class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
               >
                 <li>
-                  Membantu memimpin dan mendampingi 30 siswa didalam
-                  kesehariannya
+                  Successfully leading every school event throughout one term.
+                </li>
+                <li>Leading regular meetings and evaluations.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="700">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Oct 2018 - Nov 2019</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Head of The Marching Band Club
+              </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                Pupuk Kujang Cikampek Junior High School
+              </p>
+              <ul
+                class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+              >
+                <li>
+                  Leading routine rehearsals and coordinating member activities.
                 </li>
                 <li>
-                  Membantu membina 30 siswa didalam mengikuti lomba lomba antar
-                  siswa
+                  Successfully leading 50 members to participate in a
+                  provincial-level competition and achieving 3rd place.
                 </li>
               </ul>
             </div>
@@ -328,16 +384,52 @@
             <div data-aos="fade-down" data-aos-duration="1000">
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >2021 - 2023</time
+                >Nov 2021 - Dec 2022</time
               >
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Ketua Ekstrakurikuler Futsal
+                Student Council Secretary
               </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                Sulthon Aulia Boarding School (Senior High School)
+              </p>
               <ul
                 class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
               >
-                <li>Membuat program latihan tim Futsal</li>
-                <li>Membawa Tim untuk mengikuti perlombaan</li>
+                <li>
+                  Executing responsibilities to document the Student Council
+                  meeting processes, record decisions, and compile meeting
+                  reports.
+                </li>
+                <li>Actively involved in coordinating school events.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="1000">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Jul 2022 - Apr 2023</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Head of Girls Dormitory
+              </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                Sulthon Aulia Boarding School (Senior High School)
+              </p>
+              <ul
+                class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+              >
+                <li>
+                  Successfully led a group of 20 female students in their daily
+                  lives.
+                </li>
+                <li>
+                  Effectively inspired residents of the dormitory to engage
+                  actively and secure victories in diverse school competitions.
+                </li>
               </ul>
             </div>
           </li>
@@ -348,20 +440,53 @@
             <div data-aos="fade-down" data-aos-duration="1300">
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >2021 - 2023</time
+                >22 - 24 August 2022</time
               >
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Ketua Divisi Pemuda dan Olahraga OSIS
+                Committee for LDKS Activity with TNI AU Halim
               </h3>
               <ul
                 class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
               >
                 <li>
-                  Berhasil membuat Event- Event dan Class Meeting selama masa
-                  jabatan
+                  Monitoring the participation and progress of participants
+                  during the event.
                 </li>
-                <li>Membuat Program kegiatan olahraga bersama Alumni</li>
+                <li>
+                  Preparing relevant leadership learning and training materials
+                  for the participants.
+                </li>
               </ul>
+            </div>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="1300">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Sep 2021</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Latihan Dasar Kepemimpinan Siswa (LDKS) with TNI AD PUSDIKINTEL
+                KODIKLAT Bogor
+              </h3>
+            </div>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="1300">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Dec 2021</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Latihan Dasar Kepemimpinan Siswa (LDKS) with TNI AD DODIKLATPUR
+                Gunung Putri
+              </h3>
             </div>
           </li>
           <li class="mb-10 ms-4">
@@ -371,23 +496,546 @@
             <div data-aos="fade-down" data-aos-duration="1600">
               <time
                 class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-                >2022 - 2023</time
+                >Feb 2024 - Feb 2025</time
               >
               <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                Ketua Pelaksana Buku Tahunan Sekolah
+                Himpunan Mahasiswa Bussiness Law (HIMSLAW) Activist
               </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                BINUS University
+              </p>
               <ul
                 class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
               >
                 <li>
-                  Menciptakan lingkungan kerja yang mendukung pertumbuhan
-                  individu dan kolaborasi tim.
+                  Participate in
+                  <strong>Latihan Dasar Aktivis (LDK A 2024)</strong> activities
                 </li>
-                <li>Berhasil mengumpulkan dana sponsor</li>
+                <li>
+                  Participate in
+                  <strong>Aktivis Training (ATTRA)</strong> activities
+                </li>
+                <li>
+                  Become a Secretary in <strong>Buka Bersama</strong> project
+                </li>
+                <li>Master Of Ceremony <strong>SCA Himslaw 1 & 2</strong></li>
+                <li>
+                  Become Relation Division in <strong>EXPO HIMSLAW 2024</strong>
+                </li>
+                <li>Become Secretary in <strong>HLC 2024</strong></li>
+                <li>
+                  Become Public Relation in
+                  <strong>Business Law Career Session</strong> Project
+                </li>
+                <li>
+                  Become Public Relation in
+                  <strong>Open Recruitment HIMSLAW 2024</strong>
+                </li>
+                <li>
+                  Become Secretary in <strong>MAKRAB HIMSLAW 2024</strong>
+                </li>
+                <li>
+                  Project Officer <strong>Welcoming Party HIMSLAW 2024</strong>
+                </li>
+                <li>
+                  Project Officer
+                  <strong
+                    >Latihan Dasar Kepemimpinan Aktivist (LDK A 2025)</strong
+                  >
+                </li>
               </ul>
             </div>
           </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="1300">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Jul 2024</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Freshmen Leader and Freshmen Partner
+              </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                BINUS University
+              </p>
+            </div>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="1300">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Feb 2025 - Des 2025</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                President of Himpunan Mahasiswa Bussiness Law (HIMSLAW)
+              </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                BINUS University
+              </p>
+              <ul
+                class="mb-4 text-base font-normal text-gray-500 dark:text-gray-400 list-disc list-inside"
+              >
+                <li>
+                  The Person in Charge of every Event and work program at
+                  HIMSLAW
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="mb-10 ms-4">
+            <div
+              class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
+            ></div>
+            <div data-aos="fade-down" data-aos-duration="1300">
+              <time
+                class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
+                >Feb 2025 - Des 2025</time
+              >
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                Executive Director of HIMSLAW
+              </h3>
+              <p class="text-base font-bold text-orange-500 dark:text-blue-400">
+                National Bussiness Law Competition (NBLC) 2025
+              </p>
+            </div>
+          </li>
         </ol>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section
+      id="gallery"
+      class="bg-slate-50 dark:bg-gray-900 py-10 px-4 md:px-15 min-h-screen"
+    >
+      <div class="text-center mb-8" data-aos="fade-in">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white underline decoration-amber-600 dark:decoration-indigo-500 underline-offset-8"
+        >
+          Gallery
+        </h2>
+      </div>
+      <div class="max-w-screen-lg mx-auto">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div data-aos="zoom-in" data-aos-duration="500">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery1.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="700">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery2s.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="900">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery3.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1100">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery4.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1300">
+            <img
+              class="w-full h-64 object-cover rounded-lg object-top"
+              src="img/gallery7s.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1500">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery6.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1700">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery5.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1900">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery8.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="2100">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery9.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="2300">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery10s.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="2500">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery11.jpeg"
+              alt=""
+            />
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="2700">
+            <img
+              class="w-full h-64 object-cover rounded-lg"
+              src="img/gallery12.jpeg"
+              alt=""
+            />
+          </div>
+        </div>
+        <div class="text-center mt-8" data-aos="fade-up">
+          <p
+            class="text-lg md:text-xl text-gray-600 dark:text-gray-300 italic max-w-4xl mx-auto"
+          >
+            A visual journey through my experiences, achievements, and moments
+            that define my professional and personal growth.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="bg-slate-50 dark:bg-gray-900 py-10 px-4 md:px-15 min-h-screen"
+    >
+      <div class="text-center mb-20" data-aos="fade-in">
+        <h2
+          class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white underline decoration-amber-600 dark:decoration-indigo-500 underline-offset-8"
+        >
+          Let's Connect!
+        </h2>
+      </div>
+      <div
+        class="flex flex-col md:flex-row justify-center md:justify-evenly gap-8 md:gap-4 max-w-4xl mx-auto"
+      >
+        <div
+          class="flex flex-col items-center gap-2 w-full md:w-sm"
+          data-aos="fade-up"
+          data-aos-duration="500"
+        >
+          <a
+            href="mailto:naifah.malinda@binus.ac.id"
+            target="_blank"
+            class="transition-transform hover:scale-110"
+          >
+            <div
+              class="bg-gradient-to-r from-orange-300 to-orange-500 dark:from-blue-600 dark:to-purple-700 p-4 rounded-2xl"
+            >
+              <svg
+                class="w-12 h-12 text-white dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M2.038 5.61A2.01 2.01 0 0 0 2 6v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6c0-.12-.01-.238-.03-.352l-.866.65-7.89 6.032a2 2 0 0 1-2.429 0L2.884 6.288l-.846-.677Z"
+                />
+                <path
+                  d="M20.677 4.117A1.996 1.996 0 0 0 20 4H4c-.225 0-.44.037-.642.105l.758.607L12 10.742 19.9 4.7l.777-.583Z"
+                />
+              </svg>
+            </div>
+          </a>
+          <p class="font-bold text-lg md:text-xl text-gray-900 dark:text-white">
+            Email:
+          </p>
+          <a
+            href="mailto:naifah.malinda@binus.ac.id"
+            target="_blank"
+            class="text-base md:text-xl text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-blue-400 transition-colors text-center break-all"
+            >naifah.malinda@binus.ac.id</a
+          >
+        </div>
+        <div
+          class="flex flex-col items-center gap-2 w-full md:w-sm"
+          data-aos="fade-up"
+          data-aos-duration="700"
+        >
+          <a
+            href="https://www.instagram.com/naifahalmaa"
+            target="_blank"
+            class="transition-transform hover:scale-110"
+          >
+            <div
+              class="bg-gradient-to-r from-orange-300 to-orange-500 dark:from-blue-600 dark:to-purple-700 p-4 rounded-2xl"
+            >
+              <svg
+                class="w-12 h-12 text-white dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </div>
+          </a>
+          <p class="font-bold text-lg md:text-xl text-gray-900 dark:text-white">
+            Instagram:
+          </p>
+          <a
+            href="https://www.instagram.com/naifahalmaa"
+            target="_blank"
+            class="text-base md:text-xl text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-blue-400 transition-colors"
+            >@naifahalmaa</a
+          >
+        </div>
+        <div
+          class="flex flex-col items-center gap-2 w-full md:w-sm"
+          data-aos="fade-up"
+          data-aos-duration="900"
+        >
+          <a
+            href="https://line.me/ti/p/naifahalmaa"
+            target="_blank"
+            class="transition-transform hover:scale-110"
+          >
+            <div
+              class="bg-gradient-to-r from-orange-300 to-orange-500 dark:from-blue-600 dark:to-purple-700 p-4 rounded-2xl"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0,0,256,256"
+                class="w-12 h-12 text-white dark:text-white"
+                aria-hidden="true"
+                width="24"
+                height="24"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <g
+                  fill="none"
+                  fill-rule="nonzero"
+                  stroke="none"
+                  stroke-width="1"
+                  stroke-linecap="butt"
+                  stroke-linejoin="miter"
+                  stroke-miterlimit="10"
+                  stroke-dasharray=""
+                  stroke-dashoffset="0"
+                  font-family="none"
+                  font-weight="none"
+                  font-size="none"
+                  text-anchor="none"
+                  style="mix-blend-mode: normal"
+                >
+                  <g transform="scale(5.33333,5.33333)">
+                    <path
+                      d="M12.5,42h23c3.59,0 6.5,-2.91 6.5,-6.5v-23c0,-3.59 -2.91,-6.5 -6.5,-6.5h-23c-3.59,0 -6.5,2.91 -6.5,6.5v23c0,3.59 2.91,6.5 6.5,6.5z"
+                      fill-opacity="0"
+                      fill="#4ca44c"
+                    ></path>
+                    <path
+                      d="M37.113,22.417c0,-5.865 -5.88,-10.637 -13.107,-10.637c-7.227,0 -13.108,4.772 -13.108,10.637c0,5.258 4.663,9.662 10.962,10.495c0.427,0.092 1.008,0.282 1.155,0.646c0.132,0.331 0.086,0.85 0.042,1.185c0,0 -0.153,0.925 -0.187,1.122c-0.057,0.331 -0.263,1.296 1.135,0.707c1.399,-0.589 7.548,-4.445 10.298,-7.611h-0.001c1.901,-2.082 2.811,-4.197 2.811,-6.544zM18.875,25.907h-2.604c-0.379,0 -0.687,-0.308 -0.687,-0.688v-5.209c0,-0.379 0.308,-0.687 0.687,-0.687c0.379,0 0.687,0.308 0.687,0.687v4.521h1.917c0.379,0 0.687,0.308 0.687,0.687c0,0.38 -0.308,0.689 -0.687,0.689zM21.568,25.219c0,0.379 -0.308,0.688 -0.687,0.688c-0.379,0 -0.687,-0.308 -0.687,-0.688v-5.209c0,-0.379 0.308,-0.687 0.687,-0.687c0.379,0 0.687,0.308 0.687,0.687zM27.838,25.219c0,0.297 -0.188,0.559 -0.47,0.652c-0.071,0.024 -0.145,0.036 -0.218,0.036c-0.215,0 -0.42,-0.103 -0.549,-0.275l-2.669,-3.635v3.222c0,0.379 -0.308,0.688 -0.688,0.688c-0.379,0 -0.688,-0.308 -0.688,-0.688v-5.209c0,-0.296 0.189,-0.558 0.47,-0.652c0.071,-0.024 0.144,-0.035 0.218,-0.035c0.214,0 0.42,0.103 0.549,0.275l2.67,3.635v-3.223c0,-0.379 0.309,-0.687 0.688,-0.687c0.379,0 0.687,0.308 0.687,0.687zM32.052,21.927c0.379,0 0.688,0.308 0.688,0.688c0,0.379 -0.308,0.687 -0.688,0.687h-1.917v1.23h1.917c0.379,0 0.688,0.308 0.688,0.687c0,0.379 -0.309,0.688 -0.688,0.688h-2.604c-0.378,0 -0.687,-0.308 -0.687,-0.688v-2.603c0,-0.001 0,-0.001 0,-0.001v-0.001v-2.601c0,-0.001 0,-0.001 0,-0.002c0,-0.379 0.308,-0.687 0.687,-0.687h2.604c0.379,0 0.688,0.308 0.688,0.687c0,0.379 -0.308,0.687 -0.688,0.687h-1.917v1.23h1.917z"
+                      fill="#ffffff"
+                    ></path>
+                  </g>
+                </g>
+              </svg>
+            </div>
+          </a>
+          <p class="font-bold text-lg md:text-xl text-gray-900 dark:text-white">
+            Line:
+          </p>
+          <a
+            href="https://line.me/ti/p/naifahalmaa"
+            target="_blank"
+            class="text-base md:text-xl text-gray-600 dark:text-gray-300 hover:text-orange-500 dark:hover:text-blue-400 transition-colors"
+            >naifahalmaa</a
+          >
+        </div>
+      </div>
+
+      <!-- Contact Form -->
+      <div
+        class="mt-16 max-w-2xl mx-auto"
+        data-aos="fade-up"
+        data-aos-duration="600"
+      >
+        <div class="text-center mb-8">
+          <h3
+            class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-2"
+          >
+            Send Me a Message
+          </h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Have a question or want to work together? I'd love to hear from you!
+          </p>
+        </div>
+
+        <form
+          id="contact-form"
+          class="space-y-6 bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700"
+        >
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label
+                for="from_name"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Your Name
+              </label>
+              <input
+                type="text"
+                id="from_name"
+                name="from_name"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div>
+              <label
+                for="from_email"
+                class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                Your Email
+              </label>
+              <input
+                type="email"
+                id="from_email"
+                name="from_email"
+                required
+                class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
+                placeholder="Enter your email"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label
+              for="subject"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              Subject
+            </label>
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              required
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
+              placeholder="What's this about?"
+            />
+          </div>
+
+          <div>
+            <label
+              for="message"
+              class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+            >
+              Message
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              required
+              class="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-orange-500 dark:focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 resize-vertical transition-colors"
+              placeholder="Tell me about your project, question, or just say hi!"
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button
+              type="submit"
+              id="submit-btn"
+              class="inline-flex items-center px-8 py-3 bg-gradient-to-r from-orange-300 to-orange-600 dark:from-blue-600 dark:to-purple-700 text-white font-medium rounded-lg hover:from-orange-400 hover:to-orange-700 dark:hover:from-blue-700 dark:hover:to-purple-800 focus:outline-none focus:ring-4 focus:ring-orange-300 dark:focus:ring-blue-800 transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+            >
+              <svg
+                class="w-5 h-5 mr-2"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+                ></path>
+              </svg>
+              <span id="btn-text">Send Message</span>
+            </button>
+          </div>
+
+          <!-- Success/Error Messages -->
+          <div id="form-message" class="text-center hidden">
+            <div
+              id="success-message"
+              class="hidden p-4 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 rounded-lg"
+            >
+              <svg
+                class="w-5 h-5 inline mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              Message sent successfully! I'll get back to you soon.
+            </div>
+            <div
+              id="error-message"
+              class="hidden p-4 bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300 rounded-lg"
+            >
+              <svg
+                class="w-5 h-5 inline mr-2"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+              <span id="error-text"
+                >Something went wrong. Please try again or contact me
+                directly.</span
+              >
+            </div>
+          </div>
+        </form>
       </div>
     </section>
 
@@ -400,10 +1048,10 @@
         <a
           type="button"
           href="#hero"
-          class="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-lg p-4 text-center inline-flex items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 transition-all duration-300"
+          class="text-white bg-orange-300 hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-full text-lg p-4 text-center inline-flex items-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800 transition-all duration-300"
         >
           <svg
-            class="w-8 h-8 text-gray-800 dark:text-white"
+            class="w-8 h-8 text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -423,14 +1071,69 @@
           <span class="sr-only">Arrow Up</span>
         </a>
         <p class="text-gray-500 dark:text-gray-400 mt-2 text-xl font-semibold">
-          Scroll to top
+          Back to Top
         </p>
       </div>
     </footer>
 
-    <script src="./dist/flowbite.min.js"></script>
+    <script src="flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+      // EmailJS Configuration
+      emailjs.init("xJRRZA4CWFXt-EBwn"); // Replace with your EmailJS public key
+
+      // Contact Form Handler
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const submitBtn = document.getElementById("submit-btn");
+          const btnText = document.getElementById("btn-text");
+          const formMessage = document.getElementById("form-message");
+          const successMessage = document.getElementById("success-message");
+          const errorMessage = document.getElementById("error-message");
+
+          // Hide previous messages
+          formMessage.classList.add("hidden");
+          successMessage.classList.add("hidden");
+          errorMessage.classList.add("hidden");
+
+          // Show loading state
+          submitBtn.disabled = true;
+          btnText.textContent = "Sending...";
+
+          // Send email using EmailJS
+          emailjs.sendForm("service_hnw19s9", "template_e1p0ums", this).then(
+            function (response) {
+              console.log("SUCCESS!", response.status, response.text);
+
+              // Show success message
+              formMessage.classList.remove("hidden");
+              successMessage.classList.remove("hidden");
+
+              // Reset form
+              document.getElementById("contact-form").reset();
+
+              // Reset button
+              submitBtn.disabled = false;
+              btnText.textContent = "Send Message";
+            },
+            function (error) {
+              console.log("FAILED...", error);
+
+              // Show error message
+              formMessage.classList.remove("hidden");
+              errorMessage.classList.remove("hidden");
+
+              // Reset button
+              submitBtn.disabled = false;
+              btnText.textContent = "Send Message";
+            }
+          );
+        });
+
+      // Theme Toggle Script
       var themeToggleDarkIcon = document.getElementById(
         "theme-toggle-dark-icon"
       );
