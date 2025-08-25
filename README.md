@@ -312,7 +312,7 @@ Feel free to fork this project and customize it for your own use. If you make im
 
 ## 📜 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is open source, you can credit me if you want! 😅
 
 ---
 
